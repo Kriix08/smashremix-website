@@ -95,6 +95,21 @@
   cursor: pointer;
 }
 
+#patchModalBody {
+  p {
+    margin: 0.3rem 0;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+
+  ul {
+    margin-top: 0rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
 .patch-controls {
   display: flex;
   flex-direction: column;
