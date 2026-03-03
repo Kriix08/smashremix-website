@@ -12,13 +12,13 @@ theme:
   favicon: assets/smashremixlogo_icon.webp
   features:
     - search.suggest
-    # - navigation.sections
     - navigation.tracking
     - navigation.expand
+    - navigation.sections
     - navigation.path
     - navigation.indexes
     - toc.follow
-    - toc.integrate
+    # - toc.integrate
     - navigation.top
 
 plugins:
@@ -50,5 +50,5 @@ nav:
       - index.md
   - Patcher:
       - patcher/index.md
-  - Emulator:
+  - Emulator Setup:
       - emulator/index.md
