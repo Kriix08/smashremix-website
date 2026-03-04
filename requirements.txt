@@ -3,5 +3,6 @@ mkdocs-material
 mkdocs-git-authors-plugin
 mkdocs-git-committers-plugin-2
 mkdocs-macros-plugin
+mkdocs-minify-plugin
 requests
 pyyaml
