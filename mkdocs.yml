@@ -61,4 +61,4 @@ nav:
   - Patcher:
       - patcher/index.md
   - Netplay Setup:
-      - emulator/index.md
+      - netplay/index.md

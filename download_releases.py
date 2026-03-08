@@ -111,31 +111,6 @@ def process_zip_assets(release):
     return found_any, notes_text, filenames
 
 
-def save_release_notes(releases):
-    """Save release notes to a JSON file. Combines GitHub body with any notes found in ZIP."""
-    notes = {}
-    for release in releases:
-        tag = release["tag_name"]
-        body = release.get("body", "") or ""
-        # if we discovered notes inside the zip or assets, append them
-        zip_text = release.get("zip_notes")
-        asset_text = release.get("asset_notes")
-        if asset_text:
-            body = (body + "\n\n" + asset_text).strip()
-        if zip_text:
-            body = (body + "\n\n" + zip_text).strip()
-
-        notes[tag] = {
-            "name": release.get("name", tag),
-            "body": body,
-            "html_url": release.get("html_url"),
-        }
-
-    with open(RELEASES_MANIFEST_FILE, "w", encoding="utf-8") as f:
-        json.dump(notes, f, indent=2, ensure_ascii=False)
-    print(f"✓ Saved release notes to {RELEASES_MANIFEST_FILE}")
-
-
 def main():
     print("Fetching releases...")
     releases = fetch_releases()
@@ -155,7 +130,8 @@ def main():
                     "version": tag,
                     "original_url": release.get("html_url"),
                     "files": {},
-                    "patch_notes": notes or release.get("body", "")
+                    "patch_notes": notes or release.get("body", ""),
+                    "release_date": release.get("published_at")
                 }
 
                 for fname in files:

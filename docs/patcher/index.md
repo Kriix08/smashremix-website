@@ -23,6 +23,10 @@ hide: toc
   </button>
 </div>
 
+<small id="releaseUrl" className="text-sm" style="display: none;">Release URL:</small>
+<br/>
+<small id="releaseDate" className="text-sm" style="display: none;">Release date:</small>
+
 ##### Region
 
 <div id="region-container" style="margin-bottom: 1rem; margin-left: 1rem;">
@@ -161,6 +165,7 @@ const myPatcherSettings = {
 
 let releases = [];
 let others = [];
+let currentSelection = null;
 let currentNoteVersion = '';
 let currentNoteBody = '';
 
@@ -194,6 +199,8 @@ function populateAllOptions() {
     opt.dataset.files = JSON.stringify(entry.files);
     opt.dataset.notes = entry.patch_notes || '';
     opt.dataset.version = entry.name || '';
+    opt.dataset.release_date = new Date(entry.release_date)
+    opt.dataset.release_url = entry.original_url
     select.appendChild(opt);
   });
 
@@ -219,6 +226,8 @@ function updatePatcher() {
 
   let patchFile = null;
 
+  currentSelection = selected.dataset;
+
   if (selected.dataset.category === 'releases') {
     const files = JSON.parse(selected.dataset.files);
 
@@ -234,9 +243,8 @@ function updatePatcher() {
 
     currentNoteBody = selected.dataset.notes || '';
     currentNoteVersion = selected.dataset.version || '';
-  }
 
-  if (selected.dataset.category === 'other') {
+  } else if (selected.dataset.category === 'other') {
     palRadio.disabled = true;
     ntscRadio.checked = true;
     patchFile = selected.dataset.file;
@@ -267,6 +275,28 @@ function updatePatcher() {
     notesBtn.style.display = '';
   } else {
     notesBtn.style.display = 'none';
+  }
+
+  console.log(currentSelection)
+
+  // Release date logic
+  const dateDiv = document.getElementById('releaseDate')
+  if (currentSelection.release_date != null) {
+    dateDiv.style.display = 'unset';
+    dateDiv.innerHTML = `Release date: ${currentSelection.release_date}`
+  } else {
+    dateDiv.style.display = 'none';
+    dateDiv.innerHTML = "";
+  }
+
+  // Release url logic
+  const releaseDiv = document.getElementById('releaseUrl')
+  if (currentSelection.release_url != null) {
+    releaseDiv.style.display = 'unset';
+    releaseDiv.innerHTML = `Release URL: <a target="_blank" href="${currentSelection.release_url}">${currentSelection.release_url}</a>`
+  } else {
+    releaseDiv.style.display = 'none';
+    releaseDiv.innerHTML = "";
   }
 }
 
