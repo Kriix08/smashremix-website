@@ -11,3 +11,4 @@ uv run mkdocs serve --livereload
 Open `http://127.0.0.1:8000/` in your browser; changes to `docs/` rebuild automatically.
 
 The `mkdocs.yml` configuration contains theme and plugin settings (Material, macros, git-committers, etc.).
+
