@@ -6,7 +6,7 @@ This page's contents will help you set up Smash Remix to play with others online
 
 ## 1. Patching the ROM
 
-Smash Remix is a **ROM hack**, meaning you must apply the Remix data to the original game. Smash remix does not include the original game's copyrighted material.
+Smash Remix is a **ROM hack**, meaning you must apply the Remix patch to the original game.
 
 1.  Open the [Web Patcher](../patcher/index.md).
 2.  **Version:** Select the desired Smash Remix version. Default is latest release.
@@ -14,7 +14,7 @@ Smash Remix is a **ROM hack**, meaning you must apply the Remix data to the orig
 4.  Click **Apply patch** and save the new `.z64` file.
 
 ## 2. Emulator Installation
-1.  Download the latest version of [<img alt="RMG-K" class="twemoji" src="RMG.svg"> RMG-K](https://github.com/Jay-Day/RMG-K/releases). Using the portable version is recommended.
+1.  Download the latest version of [<img alt="RMG-K" class="twemoji" src="RMG.svg"> RMG-K](https://github.com/Jay-Day/RMG-K/releases/latest). Using the portable version is recommended.
 > **Linux/Mac users:** use the Windows version via `wine`, as native netplay support currently isn't available for these platforms.
 2.  Extract the package, run the program and click **Select ROM Directory**.
 3.  Point the emulator to the folder where you saved your patched ROM.
