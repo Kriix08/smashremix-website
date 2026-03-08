@@ -74,7 +74,7 @@ If using a controller to play, these are the recommended plugins:
 ![Netplay Nickname](netplay2.png)
 3. The `ping` column indicates the connection latency between you and the server, meaning **the lower the better**.
 ![Netplay Servers](netplay3.png)
-4.  1. To **Host** a room: **Right-click** the bottom section, select the game in your list and select **Host**.
+4.  1. To **host:** Once connected to a server, press the `Create` button (or right-click on the lobby list) and select the game to host a lobby for.
     2. To **join** a room: Find the game you want to join in the bottom section and double click it.
 ![Netplay Server Window](netplay4.png)
 
