@@ -64,8 +64,14 @@ extra_javascript:
 
 extra:
   social:
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/@smashremix5540
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/Kr6J6PH
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/smashremix.bsky.social
     - icon: fontawesome/brands/github
-      link: https://joaorb64.github.io/smashremix-website/
+      link: https://github.com/JSsixtyfour/smashremix
   social_image: assets/smashremixlogo_icon.webp
 
 nav:
