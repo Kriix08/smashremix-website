@@ -28,7 +28,9 @@ plugins:
       enabled: false
       repository: joaorb64/smashremix-website
       branch: main
-  - macros
+  - macros:
+      on_error_fail: true
+      include_dir: include
   - minify:
       minify_html: true
       minify_js: true
