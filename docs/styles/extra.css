@@ -10,16 +10,16 @@
 }
 
 .md-button.md-button-red {
-  color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--md-typeset-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background-color: var(--md-code-bg-color);
 }
 
 /* Hover */
 .md-button.md-button-red:hover {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.35);
-  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--md-default-fg-color);
+  border-color: color-mix(in srgb, var(--md-code-bg-color) 50%, var(--md-default-fg-color) 50%);
+  background-color: color-mix(in srgb, var(--md-code-bg-color) 90%, var(--md-default-fg-color) 10%);
 }
 
 /* Active tab */
@@ -155,7 +155,7 @@
 /* Arrow (neutral color, works both themes) */
 #patch-selector {
   background-image: url("data:image/svg+xml;utf8,\
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'>\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='grey'>\
   <path d='M7 10l5 5 5-5'/>\
   </svg>");
   background-repeat: no-repeat;
@@ -170,28 +170,34 @@
 }
 
 article #rom-patcher-container {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--md-code-bg-color);
   color: var(--md-default-fg-color);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--md-default-fg-color--lightest);
   margin: 0;
   max-width: 100%;
 }
 
 article #rom-patcher-powered a {
+  color: var(--md-typeset-color);
   opacity: 0.8;
 }
 
+[data-md-color-scheme="default"] article #rom-patcher-powered img {
+  filter: hue-rotate(98rad) brightness(97.9%) saturate(160%);;
+}
+
 article #rom-patcher-container input[type="file"] {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--md-default-fg-color--lightest);
   color: var(--md-default-fg-color);
 }
 
 article #rom-patcher-container input[type="file"]:hover:not(:disabled) {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: color-mix(in srgb, var(--md-default-fg-color--lightest) 90%, var(--md-default-fg-color) 10%);
 }
 
 article #rom-patcher-container input[type="file"].valid {
-  background-color: #398e3d;
+  color: #fff;
+  background-color: #4cae4f;
 }
 
 #rom-patcher-container
@@ -200,6 +206,7 @@ article #rom-patcher-container input[type="file"].valid {
 }
 
 article #rom-patcher-container input[type="file"].invalid {
+  color: #fff;
   background-color: #e53734;
 }
 
