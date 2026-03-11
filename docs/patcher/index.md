@@ -30,10 +30,10 @@ hide: toc
 <br/>
 <small id="releaseDate" className="text-sm" style="display: none;">Release date:</small>
 
-##### Region
 
-<div id="region-container" style="margin-bottom: 1rem; margin-left: 1rem;">
-  <label style="margin-right:15px;">
+<div id="region-container">
+  <h5 id="region" style="margin-top: 0; margin-bottom: 0;">Region:</h5>
+  <label style="margin-left: 0.5rem;">
     <input type="radio" name="region" value="ntsc" checked onchange="updatePatcher()">
     <span>NTSC</span>
   </label>

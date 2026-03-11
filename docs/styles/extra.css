@@ -38,8 +38,9 @@
 
 /* Region radio container */
 #region-container {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
   font-size: 0.9rem;
 }
 
